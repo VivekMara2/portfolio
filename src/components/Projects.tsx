@@ -6,7 +6,7 @@ interface ProjectItem {
   badge: string
   badgeColor?: string
   subtitle?: string
-  githubUrl: string
+  githubUrl?: string
   description: string
   highlights: { title: string; detail: string }[]
   tags: string[]
@@ -76,7 +76,6 @@ export const Projects: React.FC = () => {
       badge: '⚡ PRODUCTION RAG SYSTEM',
       badgeColor: 'rgba(52, 211, 153, 0.15)',
       subtitle: '50,000+ Documents Scaled',
-      githubUrl: 'https://github.com/VivekMara2/portfolio',
       description: 'Built an end-to-end LLM-powered knowledge assistant using LangChain, OpenAI GPT-4, FAISS vector store, and FastAPI, implementing RAG architecture with semantic chunking to enable context-aware Q&A across 50,000+ enterprise documents.',
       highlights: [
         {
@@ -204,24 +203,26 @@ export const Projects: React.FC = () => {
                   ))}
                 </div>
 
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="social-btn"
-                  style={{
-                    textDecoration: 'none',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    padding: '0.6rem 1.2rem',
-                    fontSize: '0.9rem',
-                    fontWeight: 600,
-                    margin: 0
-                  }}
-                >
-                  🔗 VIEW ON GITHUB
-                </a>
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="social-btn"
+                    style={{
+                      textDecoration: 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      padding: '0.6rem 1.2rem',
+                      fontSize: '0.9rem',
+                      fontWeight: 600,
+                      margin: 0
+                    }}
+                  >
+                    🔗 VIEW ON GITHUB
+                  </a>
+                )}
               </div>
             </div>
           ))}
