@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
           {/* Profile Image vivek.jpeg */}
           <div className="ss1-avatar-container">
             <img
-              src="/vivek.jpeg"
+              src="./vivek.jpeg"
               alt="Vivek Mara"
               className="ss1-avatar"
             />
